@@ -192,14 +192,12 @@ function App() {
 	return (
 		<Container id="drum-machine" className="App" maxWidth="sm">
 			<Box sx={{ flexGrow: 1 }}>
-				<Grid
-					container
-					spacing={{ xs: 2, md: 3 }}
-					columns={{ xs: 4, sm: 8, md: 12 }}
-				>
+				<Grid container spacing={{ xs: 2, md: 3 }}>
 					<Grid item xs={12}>
 						<Item>
-							<Typography align="center">Free Code Camp Calculator</Typography>
+							<Typography variant="h6" align="center">
+								Free Code Camp Calculator
+							</Typography>
 						</Item>
 					</Grid>
 					<Grid item xs={12}>
@@ -215,7 +213,7 @@ function App() {
 						</Item>
 					</Grid>
 					{btnSigns.map((item, index) => (
-						<Grid item xs={2} sm={4} md={4} key={index}>
+						<Grid item xs={4} key={index}>
 							<Item>
 								<Button
 									size="large"
