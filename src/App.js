@@ -118,7 +118,7 @@ function App() {
 			case operator:
 				setText(
 					/=/g.test(text)
-						? text.match(/[-0-9\.e\+-]+$/) + signValue
+						? text.match(/[-0-9.e+-]+$/) + signValue
 						: /\.$/.test(text)
 						? text.slice(0, -1) + signValue
 						: /[*/+]$/.test(text) && signValue === '-'
@@ -158,7 +158,8 @@ function App() {
 					/[=]/g.test(text) || /[*/+-]$/.test(text)
 						? text
 						: /[*/+-]/g.test(text)
-						? text + '=' + eval(text)
+						? // eslint-disable-next-line no-eval
+						  text + '=' + eval(text)
 						: text
 				);
 
@@ -166,7 +167,8 @@ function App() {
 					/[=]/g.test(text) || /[*/+-]/.test(input) || input === '0.'
 						? input
 						: /[*/+-]/g.test(text)
-						? '' + eval(text)
+						? // eslint-disable-next-line no-eval
+						  '' + eval(text)
 						: input
 				);
 				break;
